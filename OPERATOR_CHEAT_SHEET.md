@@ -33,6 +33,16 @@ OTA mode requires both components:
 - Transmitter: XIAO ESP32-C3 (`cubesat_simulator.ino`)
 - Receiver: second ESP32 (`ground_station_receiver.ino`)
 
+Known working pair (tested end-to-end):
+
+- XIAO ESP32-C3 (TX)
+- ESP-WROOM-32 dev board (RX)
+
+Important MAC note:
+
+- `GROUND_STATION_MAC` in `cubesat_simulator.ino` is a proof-of-concept value.
+- Replace it with **your own receiver MAC** from `ground_boot` serial output before live OTA tests.
+
 If your host has a compatible radio interface + decoder, that can replace the separate receiver board.
 
 ### Terminal A: logger (ingest serial)
