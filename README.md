@@ -15,6 +15,7 @@ This project mocks a **typical LEO CubeSat heartbeat** and emits telemetry every
 - Main firmware: `cubesat_simulator.ino`
 - Ground receiver firmware (2nd ESP32 for OTA mode): `ground_station_receiver.ino`
 - PC ground logger/decoder: `ground_station_logger.py`
+- 1U CubeSat 3D print files: `cubesat_3d_printfiles/` (4 STL parts for a physical mock enclosure)
 
 ## Hardware reality check
 
