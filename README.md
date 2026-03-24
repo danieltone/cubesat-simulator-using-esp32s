@@ -10,6 +10,12 @@ This project mocks a **typical LEO CubeSat heartbeat** and emits telemetry every
 2. Pick **Demo mode** (no hardware) or **Live mode** (XIAO ESP32-C3)
 3. Run the copy/paste commands to generate dashboards and reports
 
+One-command live run (with connected XIAO ESP32-C3):
+
+```bash
+bash run_live_demo.sh
+```
+
 ## At a glance
 
 - Main firmware: `cubesat_simulator.ino`

@@ -38,6 +38,14 @@ Use this path for presentations and product walkthroughs.
 
 ## Path B: Live Workflow (with XIAO ESP32-C3)
 
+### One-command launcher (fastest live path)
+
+```bash
+bash run_live_demo.sh
+```
+
+This starts the serial logger + auto-refresh dashboard server together, opens the dashboard in your browser, and stops both with Ctrl+C.
+
 For realistic OTA behavior, this path uses **two boards**:
 
 - Transmitter node: XIAO ESP32-C3 running `cubesat_simulator.ino`
