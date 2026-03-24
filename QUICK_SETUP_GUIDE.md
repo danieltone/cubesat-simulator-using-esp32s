@@ -28,12 +28,27 @@ Use this path for presentations and product walkthroughs.
 
 ## Path B: Live Workflow (with XIAO ESP32-C3)
 
+For realistic OTA behavior, this path uses **two boards**:
+
+- Transmitter node: XIAO ESP32-C3 running `cubesat_simulator.ino`
+- Receiver node: ESP32 running `ground_station_receiver.ino`
+
+The host (Raspberry Pi/PC) connects to the receiver over USB serial.
+
+If your host already has a compatible radio front-end and decoder path, that can replace the separate receiver board.
+
 ### 1) Flash and start telemetry source
 
 - Flash `cubesat_simulator.ino` to the XIAO ESP32-C3
 - Confirm it emits JSON every 15s on serial (`115200` baud)
 
-### 2) Start ground ingest logger
+### 2) Flash/start ground receiver (OTA mode)
+
+- Flash `ground_station_receiver.ino` to a second ESP32
+- Read receiver MAC and set `GROUND_STATION_MAC` in transmitter firmware
+- Enable `ENABLE_ESPNOW = true` in transmitter firmware
+
+### 3) Start ground ingest logger
 
 ```bash
 python3 ground_station_logger.py --port /dev/ttyACM0 --baud 115200 --echo
@@ -44,7 +59,7 @@ This writes:
 - `data/telemetry.csv`
 - `data/telemetry.db`
 
-### 3) Start live dashboard server and open UI
+### 4) Start live dashboard server and open UI
 
 In another terminal:
 

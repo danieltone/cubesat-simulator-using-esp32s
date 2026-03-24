@@ -28,6 +28,13 @@ xdg-open demo/dashboards/index.html
 
 ## Live mode (with XIAO ESP32-C3)
 
+OTA mode requires both components:
+
+- Transmitter: XIAO ESP32-C3 (`cubesat_simulator.ino`)
+- Receiver: second ESP32 (`ground_station_receiver.ino`)
+
+If your host has a compatible radio interface + decoder, that can replace the separate receiver board.
+
 ### Terminal A: logger (ingest serial)
 
 ```bash

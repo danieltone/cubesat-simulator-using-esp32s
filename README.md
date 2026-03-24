@@ -13,8 +13,19 @@ This project mocks a **typical LEO CubeSat heartbeat** and emits telemetry every
 ## At a glance
 
 - Main firmware: `cubesat_simulator.ino`
-- Optional ground receiver (2nd ESP32): `ground_station_receiver.ino`
+- Ground receiver firmware (2nd ESP32 for OTA mode): `ground_station_receiver.ino`
 - PC ground logger/decoder: `ground_station_logger.py`
+
+## Hardware reality check
+
+If you want **over-the-air telemetry** (ESP-NOW/radio-like link), you need both sides:
+
+1. Spacecraft/transmitter node (XIAO ESP32-C3 running `cubesat_simulator.ino`)
+2. Ground receiver node (ESP32 running `ground_station_receiver.ino`)
+
+Then your Raspberry Pi/PC reads data from the receiver board over serial.
+
+If you skip the separate receiver board, the host must have a compatible radio interface directly attached and a matching decode path.
 
 ## Documentation map
 
@@ -88,13 +99,15 @@ In `cubesat_simulator.ino`:
 - Set `ENABLE_ESPNOW = true`
 - Set `GROUND_STATION_MAC` to the MAC of your receiver board
 
-## 2) Ground station receiver (optional 2nd ESP32)
+## 2) Ground station receiver (required for OTA/ESP-NOW mode)
 
 1. Flash `ground_station_receiver.ino` to any ESP32 board.
 2. Open Serial Monitor at `115200`.
 3. On boot it prints its MAC address.
 4. Copy that MAC into `GROUND_STATION_MAC` in simulator firmware.
 5. Reflash simulator and watch received heartbeat packets.
+
+If you are using direct USB serial from the simulator board to your host (no OTA link), this receiver step is not required.
 
 ## Suggested next step toward “realistic space radio”
 
