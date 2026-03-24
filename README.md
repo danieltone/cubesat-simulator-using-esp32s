@@ -34,6 +34,7 @@ If you skip the separate receiver board, the host must have a compatible radio i
 - `QUICK_SETUP_GUIDE.md` (fast 1-2-3 workflow for demos and live runs)
 - `OPERATOR_CHEAT_SHEET.md` (copy/paste command-only handout)
 - `GITHUB_DISCOVERY.md` (short profile blurb + lightweight pinning checklist)
+- `SERIAL_CONNECTIONS.md` (USB and USB-UART wiring guide for Pi/PC)
 
 ## What this simulates
 

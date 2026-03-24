@@ -37,6 +37,8 @@ The host (Raspberry Pi/PC) connects to the receiver over USB serial.
 
 If your host already has a compatible radio front-end and decoder path, that can replace the separate receiver board.
 
+Before wiring/connecting, see `SERIAL_CONNECTIONS.md` for minimal cabling and safe serial setup.
+
 ### 1) Flash and start telemetry source
 
 - Flash `cubesat_simulator.ino` to the XIAO ESP32-C3
