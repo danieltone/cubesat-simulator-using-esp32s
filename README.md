@@ -10,6 +10,7 @@ For an end-to-end operational explanation of how telemetry flows from spacecraft
 - `PIPELINE_FLOWCHART.md` (presentation-ready Mermaid diagram)
 - `QUICK_SETUP_GUIDE.md` (fast 1-2-3 workflow for demos and live runs)
 - `OPERATOR_CHEAT_SHEET.md` (copy/paste command-only handout)
+- `GITHUB_DISCOVERY.md` (short profile blurb + lightweight pinning checklist)
 
 - Main firmware: `cubesat_simulator.ino`
 - Optional ground receiver (2nd ESP32): `ground_station_receiver.ino`
