@@ -2,7 +2,7 @@
 
 This is the fastest way to run the CubeSat simulator and show the dashboards.
 
-## 1) Fastest possible preview (almost zero effort)
+## Fastest possible preview (almost zero effort)
 
 If you just want to immediately see what the dashboard experience looks like, open the prebuilt demo landing page:
 
