@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CubeSat Simulator Demo Dashboards</title>
+    <style>
+        body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 1.5rem; background: #0b1020; color: #e6edf3; }
+        h1 { margin-bottom: 0.3rem; }
+        .sub { color: #9fb0c0; margin-top: 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+        .card { background: #121a2b; border: 1px solid #2f3f5a; border-radius: 10px; padding: 1rem; }
+        .title { font-size: 1.05rem; margin-top: 0; }
+        .desc { color: #a8b6c7; min-height: 3.2rem; }
+        .btn { display: inline-block; margin-top: 0.5rem; padding: 0.45rem 0.75rem; border-radius: 8px; text-decoration: none; background: #2563eb; color: white; }
+        .btn:hover { background: #1d4ed8; }
+        code { background: #0a1222; border: 1px solid #22334f; border-radius: 6px; padding: 0.15rem 0.4rem; }
+    </style>
+</head>
+<body>
+    <h1>CubeSat Simulator Demo Dashboards</h1>
+    <p class="sub">Use these sample dashboards to demo normal operations, eclipse behavior, and anomaly detection.</p>
+
+    <div class="grid">
+        <div class="card">
+            <h2 class="title">1) Nominal Operations</h2>
+            <p class="desc">Balanced power and thermal profile with healthy link quality and no significant anomalies.</p>
+            <a class="btn" href="dashboard_sample_1_nominal.html">Open Dashboard</a>
+        </div>
+
+        <div class="card">
+            <h2 class="title">2) Eclipse-Heavy Passes</h2>
+            <p class="desc">Frequent eclipse periods showing SOC sag, cooler thermal behavior, and reduced solar input.</p>
+            <a class="btn" href="dashboard_sample_2_eclipse_heavy.html">Open Dashboard</a>
+        </div>
+
+        <div class="card">
+            <h2 class="title">3) Anomaly Storm</h2>
+            <p class="desc">Injected comms/thermal stress to demonstrate threshold alerts and anomaly counting.</p>
+            <a class="btn" href="dashboard_sample_3_anomaly_storm.html">Open Dashboard</a>
+        </div>
+    </div>
+
+    <p style="margin-top:1.3rem;color:#8da2b8;">Tip: regenerate all demo artifacts anytime with <code>python3 generate_demo_dashboards.py</code>.</p>
+</body>
+</html>

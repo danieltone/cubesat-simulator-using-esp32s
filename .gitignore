@@ -1,0 +1,17 @@
+# Python cache/artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# Runtime/generated local data
+# Keep demo assets under demo/ tracked for presentations.
+data/telemetry.csv
+data/telemetry.db
+data/dashboard.html
+data/dashboard_recent.html
