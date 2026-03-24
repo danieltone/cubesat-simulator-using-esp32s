@@ -4,17 +4,25 @@ This project mocks a **typical LEO CubeSat heartbeat** and emits telemetry every
 
 ![](dashboard.png)
 
-For an end-to-end operational explanation of how telemetry flows from spacecraft to ground software, see:
+## Quick Start (1-2-3)
+
+1. Open `QUICK_SETUP_GUIDE.md`
+2. Pick **Demo mode** (no hardware) or **Live mode** (XIAO ESP32-C3)
+3. Run the copy/paste commands to generate dashboards and reports
+
+## At a glance
+
+- Main firmware: `cubesat_simulator.ino`
+- Optional ground receiver (2nd ESP32): `ground_station_receiver.ino`
+- PC ground logger/decoder: `ground_station_logger.py`
+
+## Documentation map
 
 - `TELEMETRY_PIPELINE.md`
 - `PIPELINE_FLOWCHART.md` (presentation-ready Mermaid diagram)
 - `QUICK_SETUP_GUIDE.md` (fast 1-2-3 workflow for demos and live runs)
 - `OPERATOR_CHEAT_SHEET.md` (copy/paste command-only handout)
 - `GITHUB_DISCOVERY.md` (short profile blurb + lightweight pinning checklist)
-
-- Main firmware: `cubesat_simulator.ino`
-- Optional ground receiver (2nd ESP32): `ground_station_receiver.ino`
-- PC ground logger/decoder: `ground_station_logger.py`
 
 ## What this simulates
 
