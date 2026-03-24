@@ -46,6 +46,20 @@ bash run_live_demo.sh
 
 This starts the serial logger + auto-refresh dashboard server together, opens the dashboard in your browser, and stops both with Ctrl+C.
 
+For receiver-based ground-station mode (ESP-WROOM-32 usually appears as `/dev/ttyUSB0`):
+
+```bash
+SERIAL_PORT=/dev/ttyUSB0 bash run_live_demo.sh
+```
+
+Tested end-to-end hardware pair:
+
+- XIAO ESP32-C3 as transmitter
+- ESP-WROOM-32 as ground receiver
+
+Important: replace `GROUND_STATION_MAC` in `cubesat_simulator.ino` with **your own receiver MAC**.
+The included MAC is only a proof-of-concept from one test setup.
+
 For realistic OTA behavior, this path uses **two boards**:
 
 - Transmitter node: XIAO ESP32-C3 running `cubesat_simulator.ino`

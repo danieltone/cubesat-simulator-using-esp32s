@@ -15,3 +15,8 @@ data/telemetry.csv
 data/telemetry.db
 data/dashboard.html
 data/dashboard_recent.html
+
+# PlatformIO local build artifacts
+pio_upload/.pio/
+pio_receiver_upload/.pio/
+.flash_pio/.pio/

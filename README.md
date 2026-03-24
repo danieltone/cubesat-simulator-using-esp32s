@@ -34,6 +34,29 @@ Then your Raspberry Pi/PC reads data from the receiver board over serial.
 
 If you skip the separate receiver board, the host must have a compatible radio interface directly attached and a matching decode path.
 
+### Tested hardware combo (end-to-end)
+
+This repo has been tested end-to-end with:
+
+- **Transmitter:** Seeed XIAO ESP32-C3
+- **Ground receiver:** ESP-WROOM-32 dev board
+
+Tested flow:
+
+`XIAO ESP32-C3 (ESP-NOW TX) -> ESP-WROOM-32 (ESP-NOW RX) -> USB serial -> ground_station_logger.py -> telemetry.db -> live_dashboard_server.py`
+
+### MAC address requirement (important)
+
+The transmitter sketch includes a proof-of-concept `GROUND_STATION_MAC` value from the tested setup.
+You **must** replace it with your own receiver board MAC address.
+
+How to set it correctly:
+
+1. Flash `ground_station_receiver.ino` to your receiver ESP32.
+2. Open serial monitor at `115200` and copy the MAC from `ground_boot`.
+3. Paste that MAC into `GROUND_STATION_MAC` in `cubesat_simulator.ino`.
+4. Reflash the transmitter.
+
 ## Documentation map
 
 - `TELEMETRY_PIPELINE.md`

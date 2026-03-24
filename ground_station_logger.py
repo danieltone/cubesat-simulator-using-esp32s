@@ -56,22 +56,24 @@ def flatten_telemetry(msg: Dict[str, Any]) -> Dict[str, Any]:
         "orbit_latitude_deg": nested_get(msg, ("orbit", "latitude_deg"), msg.get("lat")),
         "orbit_longitude_deg": nested_get(msg, ("orbit", "longitude_deg"), msg.get("lon")),
         "orbit_eclipse": nested_get(msg, ("orbit", "eclipse"), msg.get("e")),
-        "eps_battery_soc_pct": nested_get(msg, ("eps", "battery_soc_pct")),
+        "eps_battery_soc_pct": nested_get(msg, ("eps", "battery_soc_pct"), msg.get("soc")),
         "eps_battery_v": nested_get(msg, ("eps", "battery_v")),
         "eps_battery_i_a": nested_get(msg, ("eps", "battery_i_a")),
         "eps_solar_w": nested_get(msg, ("eps", "solar_w")),
         "eps_load_w": nested_get(msg, ("eps", "load_w")),
-        "thermal_bus_c": nested_get(msg, ("thermal", "bus_c")),
+        "thermal_bus_c": nested_get(msg, ("thermal", "bus_c"), msg.get("tb", msg.get("temp"))),
         "thermal_battery_c": nested_get(msg, ("thermal", "battery_c")),
         "thermal_payload_c": nested_get(msg, ("thermal", "payload_c")),
         "adcs_roll_deg": nested_get(msg, ("adcs", "attitude_euler_deg", "roll")),
         "adcs_pitch_deg": nested_get(msg, ("adcs", "attitude_euler_deg", "pitch")),
         "adcs_yaw_deg": nested_get(msg, ("adcs", "attitude_euler_deg", "yaw")),
         "comms_downlink_bps": nested_get(msg, ("comms", "downlink_bps")),
-        "comms_snr_db": nested_get(msg, ("comms", "snr_db")),
-        "comms_rssi_dbm": nested_get(msg, ("comms", "rssi_dbm")),
+        "comms_snr_db": nested_get(msg, ("comms", "snr_db"), msg.get("snr")),
+        "comms_rssi_dbm": nested_get(msg, ("comms", "rssi_dbm"), msg.get("rssi")),
         "raw_json": json.dumps(msg, separators=(",", ":")),
     }
+    if record["orbit_altitude_km"] is None:
+        record["orbit_altitude_km"] = msg.get("alt")
     return record
 
 
