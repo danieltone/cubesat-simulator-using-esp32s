@@ -2,6 +2,16 @@
 
 This is the fastest way to run the CubeSat simulator and show the dashboards.
 
+## 1) Fastest possible preview (almost zero effort)
+
+If you just want to immediately see what the dashboard experience looks like, open the prebuilt demo landing page:
+
+```bash
+xdg-open demo/dashboards/index.html
+```
+
+That is the quickest way to preview sample scenarios in your browser.
+
 ## Path A: Instant Demo (no hardware)
 
 ### 1) Generate demo dashboards
